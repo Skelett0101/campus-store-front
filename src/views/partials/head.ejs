@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= title %> · Campus Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1e3a8a',ink:'#131b2e',gold:'#fea619',soft:'#f2f3ff',line:'#eaedff',surface:'#faf8ff'},fontFamily:{sans:['Inter'],head:['Plus Jakarta Sans']}}}}</script>
+<link href="/css/app.css" rel="stylesheet">
+</head>
+<body class="bg-surface text-ink font-sans antialiased">
+<%- include('header', { active }) %>
+<main class="pt-20">

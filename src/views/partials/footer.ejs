@@ -1,0 +1,15 @@
+</main>
+<footer class="mt-12 bg-white py-8 text-center text-sm text-gray-500">
+  © 2025 Red de Tiendas y Servicios Universitarios
+</footer>
+
+<script>
+  window.SERVICES = <%- JSON.stringify(Object.fromEntries(Object.entries(services).map(([k, v]) => [k, v.port]))) %>;
+</script>
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<% if (locals.script) { %>
+  <script src="/js/pages/<%= script %>.js"></script>
+<% } %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<%- include('../partials/head', { title, active }) %>
+<!-- HERO (estilo oscuro de la pantalla "Búho", recoloreado a la paleta azul/dorado) -->
+<section class="relative bg-gradient-to-br from-[#0f1d4d] to-primary text-white overflow-hidden">
+ <div class="halftone absolute inset-0 opacity-30"></div>
+ <div class="relative max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
+  <div>
+   <span class="inline-block bg-gold text-ink text-xs font-bold px-3 py-1 rounded-full uppercase">Temporada Oficial 2025</span>
+   <h1 class="font-head text-5xl font-extrabold mt-4 leading-tight">Tu tienda universitaria en línea</h1>
+   <p class="text-blue-100 mt-4 max-w-lg">Indumentaria oficial, papelería y tecnología con descuento estudiantil automático y recogida en lockers.</p>
+   <div class="mt-6 flex gap-3">
+    <a href="/catalogo" class="bg-gold text-ink font-bold px-6 py-3 rounded-full">Explorar catálogo</a>
+    <a href="/mis-pedidos" class="border border-white/30 px-6 py-3 rounded-full font-semibold">Mis pedidos</a>
+   </div>
+  </div>
+  <!-- SLOT: ilustración / banner (imagen o componente) -->
+  <div id="hero-visual" class="hidden lg:block h-72 rounded-3xl bg-white/10"></div>
+ </div>
+</section>
+<section class="max-w-7xl mx-auto px-6 py-12">
+ <h2 class="font-head text-2xl font-bold mb-6">Destacados</h2>
+ <!-- SLOT: productos destacados (productos :3002) -->
+ <div id="featured" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+</section>
+<%- include('../partials/footer', { script, services }) %>

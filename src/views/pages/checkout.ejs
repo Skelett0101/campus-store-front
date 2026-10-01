@@ -1,0 +1,37 @@
+<%- include('../partials/head', { title, active }) %>
+<div class="max-w-7xl mx-auto px-6 py-6 grid lg:grid-cols-12 gap-8 items-start">
+ <div class="lg:col-span-7 space-y-5">
+  <section class="bg-white rounded-2xl p-6 shadow-sm">
+   <h2 class="font-head font-bold mb-3">1 · Punto de entrega</h2>
+   <div class="grid md:grid-cols-2 gap-3">
+    <label class="p-4 rounded-xl bg-soft cursor-pointer"><input type="radio" name="entrega" value="locker" checked class="accent-primary"> <b>Lockers inteligentes</b><p class="text-xs text-gray-500">Biblioteca Norte · 24/7</p></label>
+    <label class="p-4 rounded-xl bg-line cursor-pointer"><input type="radio" name="entrega" value="mostrador" class="accent-primary"> <b>Mostrador Tienda Central</b><p class="text-xs text-gray-500">Edificio A · Lun-Vie 8-19h</p></label>
+   </div>
+  </section>
+  <section class="bg-white rounded-2xl p-6 shadow-sm">
+   <h2 class="font-head font-bold mb-3">2 · Método de pago <span class="text-xs font-mono text-gray-400">(:3004)</span></h2>
+   <div class="space-y-2">
+    <label class="block p-4 rounded-xl bg-soft"><input type="radio" name="pago" value="campuspay" checked class="accent-primary"> CampusPay <span class="text-xs bg-gold px-2 rounded font-bold">Recomendado</span></label>
+    <label class="block p-4 rounded-xl bg-line"><input type="radio" name="pago" value="tarjeta" class="accent-primary"> Tarjeta crédito/débito</label>
+    <!-- SLOT: formulario de tarjeta (visible si pago=tarjeta) -->
+    <div id="pay-card" class="hidden p-4 rounded-xl bg-line space-y-2"></div>
+    <label class="block p-4 rounded-xl bg-line"><input type="radio" name="pago" value="spei" class="accent-primary"> Transferencia SPEI</label>
+    <!-- SLOT: datos SPEI (CLABE, concepto) devueltos por pagos -->
+    <div id="pay-spei" class="hidden p-4 rounded-xl bg-line text-sm"></div>
+   </div>
+  </section>
+ </div>
+ <aside class="lg:col-span-5 bg-white rounded-2xl p-6 shadow-md lg:sticky lg:top-24">
+  <h2 class="font-head font-bold mb-3">Resumen de compra</h2>
+  <!-- SLOT: líneas del carrito -->
+  <div id="items" class="space-y-3 mb-4"></div>
+  <div class="bg-soft rounded-xl p-4 text-sm space-y-1">
+   <div class="flex justify-between"><span>Subtotal</span><span id="subtotal"></span></div>
+   <div class="flex justify-between text-emerald-700"><span>Descuento estudiante</span><span id="descuento"></span></div>
+   <div class="flex justify-between font-bold text-lg pt-2"><span>Total</span><span id="total" class="text-primary"></span></div>
+  </div>
+  <button id="btn-pay" class="w-full mt-4 h-12 bg-primary text-white rounded-full font-bold">Autorizar y pagar</button>
+  <p id="pay-msg" class="text-center text-sm mt-2"></p>
+ </aside>
+</div>
+<%- include('../partials/footer', { script, services }) %>

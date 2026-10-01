@@ -1,0 +1,17 @@
+<%- include('../partials/head', { title, active }) %>
+<div class="max-w-7xl mx-auto px-6 py-6 grid lg:grid-cols-12 gap-6 items-start">
+ <aside class="lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm lg:sticky lg:top-24 space-y-5">
+  <div class="font-head font-bold">Filtros</div>
+  <input id="f-search" placeholder="Buscar producto o SKU…" class="w-full bg-soft rounded-xl px-3 py-2 text-sm outline-none">
+  <!-- SLOT: categorías (se llenan desde productos) -->
+  <div id="f-categorias" class="space-y-1 text-sm"></div>
+  <label class="flex justify-between items-center text-sm">Solo con stock <input id="f-stock" type="checkbox" class="accent-primary"></label>
+ </aside>
+ <section class="lg:col-span-9">
+  <div class="flex justify-between items-center mb-4"><h1 class="font-head text-xl font-bold">Artículos <span id="count" class="text-sm text-gray-500"></span></h1>
+   <select id="f-sort" class="bg-white rounded-lg px-3 py-2 text-sm"><option value="">Recomendados</option><option value="asc">Precio ↑</option><option value="desc">Precio ↓</option></select></div>
+  <!-- SLOT: grid de productos -->
+  <div id="grid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+ </section>
+</div>
+<%- include('../partials/footer', { script, services }) %>
