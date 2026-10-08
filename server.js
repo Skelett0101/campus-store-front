@@ -19,3 +19,4 @@ app.use('/', require('./src/routes/pages'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Front Campus Store en http://localhost:${PORT}`));
+r
