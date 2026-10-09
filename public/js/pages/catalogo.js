@@ -1,15 +1,17 @@
 let productos = [], stock = {}, cat = '';
 const $ = (id) => document.getElementById(id);
 
-const card = (p) => `<article class="bg-white rounded-2xl p-4 shadow-sm flex flex-col gap-2">
- <div class="aspect-square rounded-xl bg-soft overflow-hidden">${p.imagen ? `<img src="${p.imagen}" class="w-full h-full object-cover">` : ''}</div>
+const card = (p) => {
+  const imgUrl = p.imagen_url || p.imagen;
+  return `<article class="bg-white rounded-2xl p-4 shadow-sm flex flex-col gap-2">
+ <div class="aspect-square rounded-xl bg-soft overflow-hidden">${imgUrl ? `<img src="${imgUrl}" class="w-full h-full object-cover" alt="${p.nombre}">` : ''}</div>
  ${p.categoria ? `<span class="text-xs uppercase text-gray-500">${p.categoria}</span>` : ''}
  <h3 class="font-bold">${p.nombre}</h3>
  <p class="text-xs text-gray-500">${p.descripcion || ''}</p>
  ${stock[p.id] !== undefined ? `<span class="text-xs ${stock[p.id] > 0 ? 'text-emerald-700' : 'text-red-600'}">${stock[p.id]} uds</span>` : ''}
  <div class="flex justify-between items-center mt-auto"><b class="text-xl text-primary">${fmt(p.precio)}</b>
  <button data-id="${p.id}" class="add w-10 h-10 rounded-full bg-primary text-white"><span class="material-symbols-outlined">add_shopping_cart</span></button></div></article>`;
-
+};
 function render() {
   const q = $('f-search').value.toLowerCase(), sort = $('f-sort').value;
   let l = productos.filter(p => (!cat || p.categoria === cat) && p.nombre.toLowerCase().includes(q) && (!$('f-stock').checked || stock[p.id] > 0));
