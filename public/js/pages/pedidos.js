@@ -18,7 +18,8 @@
       </div>`;
     }).join('') : window.empty('Aún no tienes pedidos.');
     
-  } catch { 
+  } catch (error) { 
+    console.error(error);
     el.innerHTML = window.empty('No se pudieron cargar los pedidos del Equipo 2 (:3003).'); 
   }
 })();
