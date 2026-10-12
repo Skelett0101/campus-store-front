@@ -10,7 +10,7 @@ function renderSummary() {
 renderSummary();
 
 document.querySelectorAll('[name=pago]').forEach(r => r.addEventListener('change', () => {
-  $('pay-card').classList.toggle('hidden', r.value !== 'tarjeta' \vert{}\vert{} !r.checked);$('pay-spei').classList.toggle('hidden', r.value !== 'spei' || !r.checked);
+  $('pay-card').classList.toggle('hidden', r.value !== 'tarjeta' || !r.checked);$('pay-spei').classList.toggle('hidden', r.value !== 'spei' || !r.checked);
 }));
 
 $('btn-pay').addEventListener('click', async () => {
